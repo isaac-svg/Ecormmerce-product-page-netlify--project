@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecormmerce UI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!--  header mark up -->
+    <div class="header">
+      <div class="left-header">
+        <div class="open">
+          <img src="./images/icon-menu.svg" alt="menu" class="hamburgger" />
+        </div>
+        <img src="./images/logo.svg" alt="logo" class="logo" />
+        <div class="menu">
+          <div class="inner-menu">
+            <img src="./images/icon-close.svg" alt="close" class="close" />
+            <ul class="menu-items">
+              <li>Collections</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- right section including avatar and cart  icon  -->
+      <div class="right-header">
+        <div class="cart-icon">
+          <img src="./images/icon-cart.svg" alt="cart" class="cart-icon" />
+          <span class="count-amount">0</span>
+        </div>
+        <div class="avatar">
+          <img src="./images/image-avatar.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- >End of header mark up -->
+    <!-- cart display -->
+    <div class="cart-display">
+      <!--  this where i dynamically append the cart  -->
+    </div>
+    <!-- end of cart display -->
+    <div class="product-page">
+      <div>
+        <div class="slider">
+          <img
+            src="./images/icon-previous.svg"
+            alt="previous"
+            class="previous nav"
+          />
+          <img
+            src="./images/image-product-1.jpg"
+            alt="product-1"
+            id="p1"
+            class="p-img"
+          />
+          <img
+            src="./images/image-product-2.jpg"
+            alt="product-2"
+            id="p2"
+            class="p-img"
+          />
+          <img
+            src="./images/image-product-3.jpg"
+            alt="product-3"
+            id="p3"
+            class="p-img"
+          />
+          <img
+            src="./images/image-product-4.jpg"
+            alt="product-4"
+            id="p4"
+            class="p-img"
+          />
+          <img src="./images/icon-next.svg" alt="next" class="next nav" />
+        </div>
+      </div>
+      <div class="details">
+        <span class="primary-color heading"> Sneaker Company</span>
+        <h2>Fall Limited Edition Sneakers</h2>
+
+        <p class="info">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="product">
+          <div class="price-details">
+            <span class="price"> $125.00</span>
+            <span class="discount"> 50%</span>
+            <span class="original-price"> $250.00</span>
+          </div>
+
+          <div class="flex">
+            <div class="quantity">
+              <span class="decrease"
+                ><img src="./images/icon-minus.svg" alt=""
+              /></span>
+              <span class="number">0</span>
+              <span class="increase"
+                ><img src="./images/icon-plus.svg" alt=""
+              /></span>
+            </div>
+            <div class="add-to-cart">
+              <button class="add-btn">
+                <img src="./images/icon-cart.svg" alt="" /> Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

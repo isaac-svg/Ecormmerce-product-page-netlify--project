@@ -11,6 +11,9 @@ const decrease = document.querySelector(".decrease");
 const number = document.querySelector(".number");
 const countAmount = document.querySelector(".count-amount");
 const addToCart = document.querySelector(".add-to-cart");
+const holder = document.querySelector(".holder");
+const imagesContainer = document.querySelector(".images-container");
+
 console.log(countAmount);
 // increase cart and populating cart
 // one function to handle the increase and decrease   it will nbe called if a button
@@ -44,6 +47,28 @@ decrease.addEventListener("click", () => {
   // countAmount.innerText = quantity;
   changeNumber();
 });
+
+// function  to swap  thumbnail  with main  image
+const thumbnails = document.querySelectorAll(".thumb");
+//  this function clears the active class on every element before
+//  the active class is added
+const clearAllActive = () => {
+  thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+};
+function swapThumbs() {
+  thumbnails.forEach((thumb, index) => {
+    thumb.addEventListener("mouseover", () => {
+      clearAllActive();
+      // index = quantity;
+      // images[0].src = thumb.src;
+      count = index;
+      changeImage();
+      thumb.classList.add("active");
+    });
+  });
+}
+swapThumbs();
+
 //  adding to cart
 
 // function to  clean or clear   the cart after every  click
@@ -54,6 +79,7 @@ const cleanCart = () => {
 const createCart = () => {
   cleanCart();
   let div = document.createElement("div");
+
   quantity == 0
     ? (div.innerHTML = `
   <div class="cart"><span>cart</span></div>
@@ -62,7 +88,7 @@ const createCart = () => {
     <p class='empty-cart'> your cart is empty</p>
     </div>
 
-   `)
+   `) && setTimeout(cartVisiblityFunc, 1000)
     : (div.innerHTML = `
   <div class="cart"><span>cart</span></div>
   <div class="detailed">
@@ -82,21 +108,34 @@ const createCart = () => {
       }</span></p>
           </div>
         </section>
-        <img src="./images/icon-delete.svg" alt=""  id="clear"/>
+        <img src="./images/icon-delete.svg" alt=""  id="clear" />
       </div>
     </div>
     <button class="pay-btn">Checkout</button>
   </div>`);
   cartModal.appendChild(div);
+  const checkOut = document.querySelector(".pay-btn");
+  checkOut.addEventListener("click", cartVisiblityFunc);
+  // this function clears the content of the cart and sets the quantity to zero
+  const deleteImage = document.querySelector("#clear");
+  deleteImage.addEventListener("click", () => {
+    cartModal.innerHTML = `   <div class="cart"><span>cart</span></div>
+    <div class="detailed">
+      <div class="item">
+      <p class='empty-cart'> you emptied the cart </p>
+      </div>`;
+    number.innerText = 0;
+    quantity = 0;
+    cartIcon.classList.remove("full");
+    setTimeout(cartVisiblityFunc, 1000);
+  });
 };
+
 // function to clear cart
-const clearCart = document.getElementById("clear");
-const kk = document.querySelector(".pay-btn");
-console.log(kk);
-console.log(clearCart);
-clearCart.addEventListener("click", () => {
-  cartModal.replaceChildren("");
-});
+
+//
+//
+
 // add to cart button
 addToCart.addEventListener("click", () => {
   quantity += 1;
@@ -105,6 +144,77 @@ addToCart.addEventListener("click", () => {
   countAmount.innerText = quantity;
 });
 //  end of adding to cart
+
+//  function to create modal on image click
+// this function adds eventlistener on each image
+images.forEach((image) =>
+  image.addEventListener("click", () => {
+    createModal();
+  })
+);
+const createModal = () => {
+  const section = document.createElement("div");
+  section.innerHTML = `
+  <div class="images-container">
+  <div  >
+  <img
+  src="./images/icon-previous.svg"
+  alt="previous"
+  class="previous nav"/>
+    <div class="slider modal-slider">
+      <img
+        src="./images/image-product-1.jpg"
+        alt="product-1"
+        id="p1"
+        class="p-img"
+      />
+      <img
+        src="./images/image-product-2.jpg"
+        alt="product-2"
+        id="p2"
+        class="p-img"
+      />
+      <img
+        src="./images/image-product-3.jpg"
+        alt="product-3"
+        id="p3"
+        class="p-img"
+      />
+      <img
+        src="./images/image-product-4.jpg"
+        alt="product-4"
+        id="p4"
+        class="p-img"
+      />
+    </div>
+    <img src="./images/icon-next.svg" alt="next" class="next nav" />
+    <div class="thumbnail-images">
+      <img
+        src="./images/image-product-1-thumbnail.jpg"
+        class="thumb active"
+      />
+      <img src="./images/image-product-2-thumbnail.jpg" class="thumb" />
+      <img src="./images/image-product-3-thumbnail.jpg" class="thumb" />
+      <img src="./images/image-product-4-thumbnail.jpg" class="thumb" />
+    </div>
+  </div>
+</div>
+  `;
+  imagesContainer.classList.add("modal");
+  const productsPage = document.querySelector(".products-page");
+  productsPage.appendChild(section);
+};
+
+// removing modal
+imagesContainer.addEventListener("click", (e) => removeModal(e));
+
+const removeModal = (e) => {
+  if (e.target.classList.contains("modal")) {
+    e.target.classList.remove("modal");
+  }
+};
+
+// removeModal();
 
 // slidding functionality
 let count = 0;
@@ -123,9 +233,11 @@ const changeImage = () => {
 const moveRight = () => {
   changeImage();
   count++;
+  swapThumbs();
 };
 const moveLeft = () => {
   count--;
+  swapThumbs();
   changeImage();
 };
 
@@ -134,8 +246,9 @@ previous.addEventListener("click", moveLeft);
 // sliding functionality
 
 // toggle functionalu=ity for the cart
+const cartVisiblityFunc = () => cartModal.classList.toggle("show");
 cartIcon.addEventListener("click", () => {
-  cartModal.classList.toggle("show");
+  cartVisiblityFunc();
   createCart();
 });
 

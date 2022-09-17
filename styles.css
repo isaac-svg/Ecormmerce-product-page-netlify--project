@@ -265,7 +265,7 @@ img {
   background-color: var(--light-greyish-blue);
   padding: 0.6rem 0.8rem;
   border-radius: 50%;
-  /* z-index: 100; */
+  z-index: 100;
 }
 .previous {
   position: absolute;
@@ -352,4 +352,11 @@ img {
 }
 .add-to-cart .add-btn img {
   color: white;
+}
+
+/* working on hover Effects and general colors  */
+.decrease:hover,
+.increase:hover,
+.add-to-cart:hover {
+  opacity: 0.6;
 }

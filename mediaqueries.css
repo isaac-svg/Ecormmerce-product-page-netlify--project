@@ -8,8 +8,9 @@ desktop  and mobile view  */
     width: 100%;
     justify-content: space-between;
     border-bottom: 0.1rem solid var(--light-blue);
-    padding: 1rem 1rem 2rem;
+    padding: 2rem 1rem 2.7rem;
     position: relative;
+    height: 60px;
   }
   .open {
     display: none;
@@ -18,7 +19,7 @@ desktop  and mobile view  */
     position: static;
     background: var(--white);
     display: block;
-    height: inherit;
+    height: 60px;
   }
   .close {
     display: none;
@@ -37,6 +38,14 @@ desktop  and mobile view  */
     color: var(--light-blue);
     font-size: 1.3rem;
     cursor: pointer;
+    transform-origin: left;
+    padding-bottom: 52px;
+  }
+  .menu ul li:hover {
+    font-weight: var(--large-font-weight);
+    color: var(--black-slighthly-opacity);
+    border-bottom: 4px solid var(--primary-dark-color);
+    transform-origin: right;
   }
   .left-header {
     flex: 0.6;
@@ -46,10 +55,20 @@ desktop  and mobile view  */
   .right-header {
     gap: 3rem;
   }
-  .avatar img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+  .right-header .avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    transition: 1s all;
+  }
+  .right-header .avatar img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s all;
+    border-radius: 50%;
+  }
+  .avatar img:hover {
+    border: 2px solid var(--primary-dark-color);
   }
   .right-header .cart {
     width: 60px;

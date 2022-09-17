@@ -14,7 +14,6 @@ const addToCart = document.querySelector(".add-to-cart");
 const holder = document.querySelector(".holder");
 const imagesContainer = document.querySelector(".images-container");
 
-console.log(countAmount);
 // increase cart and populating cart
 // one function to handle the increase and decrease   it will nbe called if a button
 //  is clicked , it will  check  if the countAmount is less than one so that it will  remove
@@ -57,7 +56,7 @@ const clearAllActive = () => {
 };
 function swapThumbs() {
   thumbnails.forEach((thumb, index) => {
-    thumb.addEventListener("mouseover", () => {
+    thumb.addEventListener("click", () => {
       clearAllActive();
       // index = quantity;
       // images[0].src = thumb.src;
@@ -157,11 +156,13 @@ const createModal = () => {
   section.innerHTML = `
   <div class="images-container">
   <div  >
+  
   <img
   src="./images/icon-previous.svg"
   alt="previous"
   class="previous nav"/>
-    <div class="slider modal-slider">
+  <div class="slider modal-slider">
+  // <img src="./images/icon-plus.svg" alt="close" class="modal-close" />
       <img
         src="./images/image-product-1.jpg"
         alt="product-1"

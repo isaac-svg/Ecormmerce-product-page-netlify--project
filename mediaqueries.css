@@ -94,6 +94,7 @@ desktop  and mobile view  */
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
+    transition: 0.5s all ease-out;
   }
   .images-container {
     width: 400px;
@@ -110,6 +111,9 @@ desktop  and mobile view  */
   .thumbnail-images .thumb {
     width: 20%;
     border-radius: 1rem;
+  }
+  .thumbnail-images .thumb:hover {
+    opacity: 0.5;
   }
   .thumbnail-images .thumb.active {
     opacity: 0.3;
@@ -188,10 +192,16 @@ desktop  and mobile view  */
   .images-container.remove-modal {
     /* position: static; */
   }
+  .images-container > div {
+    position: relative;
+  }
   .images-container.modal .slider {
     height: 400px;
     width: 400px;
+    position: relative;
+    /* display: none; */
   }
+
   .modal-slider {
     /* z-index: -1; */
   }
@@ -222,5 +232,23 @@ desktop  and mobile view  */
   .images-container.modal .thumbnail-images .thumb {
     width: 70px;
     border-radius: 1rem;
+  }
+  .modal-close {
+    display: none;
+  }
+  .slider .images-container.modal .modal-close {
+    position: absolute;
+    /* z-index: 800; */
+    top: -2rem;
+    right: 0rem;
+    /* width: 5rem; */
+    rotate: 90deg;
+    translate: -5rem;
+    transition: 3s all;
+    width: 1rem;
+    transform: rotateZ(60deg);
+    display: block;
+  }
+  .modal-close:hover {
   }
 }

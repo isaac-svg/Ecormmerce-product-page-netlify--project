@@ -233,8 +233,6 @@ const removeModal = (e) => {
   }
 };
 
-// removeModal();
-
 // slidding functionality
 let count = 0;
 const changeImage = () => {
@@ -263,11 +261,11 @@ next.addEventListener("click", () => {
 });
 previous.addEventListener("click", () => {
   count--;
-  moveLeft;
+  moveLeft();
 });
 // sliding functionality
 
-// toggle functionalu=ity for the cart
+// toggle functionality for the cart
 const cartVisiblityFunc = () => {
   cartModal.classList.toggle("show");
 };

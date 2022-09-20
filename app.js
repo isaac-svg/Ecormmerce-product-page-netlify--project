@@ -13,6 +13,9 @@ const countAmount = document.querySelector(".count-amount");
 const addToCart = document.querySelector(".add-to-cart");
 const holder = document.querySelector(".holder");
 const imagesContainer = document.querySelector(".images-container");
+// const modalPage = document.querySelector('.modal-page')
+const hoveredImage = "./images/icon-plus.svg";
+const closeModal = document.querySelector(".modal-close");
 
 // increase cart and populating cart
 // one function to handle the increase and decrease   it will nbe called if a button
@@ -58,8 +61,8 @@ function swapThumbs() {
   thumbnails.forEach((thumb, index) => {
     thumb.addEventListener("click", () => {
       clearAllActive();
-      // index = quantity;
-      // images[0].src = thumb.src;
+      //
+      //
       count = index;
       changeImage();
       thumb.classList.add("active");
@@ -82,7 +85,7 @@ const createCart = () => {
   quantity == 0
     ? (div.innerHTML = `
   <div class="cart"><span>cart</span></div>
-  <div class="detailed">
+  <div class="detailed cart-height">
     <div class="item">
     <p class='empty-cart'> your cart is empty</p>
     </div>
@@ -130,7 +133,19 @@ const createCart = () => {
   });
 };
 
-// function to clear cart
+// function to swap close modal images
+
+closeModal.addEventListener("mouseenter", () => {
+  closeModal.src = hoveredImage;
+});
+closeModal.addEventListener(
+  "mouseleave",
+  () => (closeModal.src = "./images/icon-close.svg")
+);
+closeModal.addEventListener("click", (e) => {
+  removeModal(e);
+  closeModal.src = "./images/icon-close.svg";
+});
 
 //
 //
@@ -213,6 +228,9 @@ const removeModal = (e) => {
   if (e.target.classList.contains("modal")) {
     e.target.classList.remove("modal");
   }
+  if (e.target.classList.contains("modal-close")) {
+    imagesContainer.classList.remove("modal");
+  }
 };
 
 // removeModal();
@@ -224,30 +242,36 @@ const changeImage = () => {
     count = 0;
   } else if (count < 0) {
     count = images.length - 1;
-  } else {
-    images.forEach(
-      (image) => (image.style.transform = `translateX(${-count * 100}%)`)
-    );
   }
+  images.forEach(
+    (image) => (image.style.transform = `translateX(${-count * 100}%)`)
+  );
 };
 
 const moveRight = () => {
   changeImage();
-  count++;
   swapThumbs();
 };
 const moveLeft = () => {
-  count--;
-  swapThumbs();
   changeImage();
+  swapThumbs();
 };
 
-next.addEventListener("click", moveRight);
-previous.addEventListener("click", moveLeft);
+next.addEventListener("click", () => {
+  count++;
+  moveRight();
+});
+previous.addEventListener("click", () => {
+  count--;
+  moveLeft;
+});
 // sliding functionality
 
 // toggle functionalu=ity for the cart
-const cartVisiblityFunc = () => cartModal.classList.toggle("show");
+const cartVisiblityFunc = () => {
+  cartModal.classList.toggle("show");
+};
+
 cartIcon.addEventListener("click", () => {
   cartVisiblityFunc();
   createCart();

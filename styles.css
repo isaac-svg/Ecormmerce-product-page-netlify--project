@@ -50,8 +50,6 @@ img {
   justify-content: space-between;
   border-bottom: 0.1px solid var(--dark-greyish-blue);
   padding: 0.8rem 1rem 1rem;
-  /* position: fixed;
-  top: 0; */
 }
 /* left header styling */
 .left-header {
@@ -78,6 +76,7 @@ img {
   height: 100vh;
   width: 100%;
   display: none;
+  z-index: 105;
 }
 .menu.open {
   display: block;
@@ -163,7 +162,7 @@ img {
   margin: 1rem auto;
   background-color: var(--white);
   border-radius: 0.4rem;
-  z-index: 100;
+  z-index: 101;
   display: none;
 }
 .cart-display.show {
@@ -246,7 +245,7 @@ img {
 } */
 .product-page .slider {
   width: 100%;
-  height: 400px;
+  height: 430px;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -258,6 +257,12 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* object-position: cover; */
+}
+/* modal closing button */
+.modal-close {
+  display: none;
+  /* display: block; */
 }
 
 /* positioning the navigators */
@@ -359,4 +364,8 @@ img {
 .increase:hover,
 .add-to-cart:hover {
   opacity: 0.6;
+}
+/*  workng on general color styling */
+.primary-color {
+  color: var(--primary-dark-color);
 }

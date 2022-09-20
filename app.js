@@ -57,6 +57,7 @@ const thumbnails = document.querySelectorAll(".thumb");
 const clearAllActive = () => {
   thumbnails.forEach((thumb) => thumb.classList.remove("active"));
 };
+//  this function swaps the immages on small screens
 function swapThumbs() {
   thumbnails.forEach((thumb, index) => {
     thumb.addEventListener("click", () => {

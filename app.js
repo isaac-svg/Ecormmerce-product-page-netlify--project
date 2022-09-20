@@ -135,7 +135,7 @@ const createCart = () => {
 };
 
 // function to swap close modal images
-
+// this finctions mimick the hover state in CSS
 closeModal.addEventListener("mouseenter", () => {
   closeModal.src = hoveredImage;
 });

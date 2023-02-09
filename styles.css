@@ -76,7 +76,7 @@ img {
   height: 100vh;
   width: 100%;
   display: none;
-  z-index: 105;
+  z-index: 101;
 }
 .menu.open {
   display: block;
@@ -261,19 +261,19 @@ img {
   background-color: var(--light-greyish-blue);
   padding: 0.6rem 0.8rem;
   border-radius: 50%;
-  /* z-index: 100; */
 }
+/* T */
 .previous {
   position: absolute;
   top: 50%;
   left: 5%;
-  z-index: 999;
+  z-index: 90;
 }
 .next {
   position: absolute;
   top: 50%;
   right: 5%;
-  z-index: 999;
+  z-index: 90;
 }
 
 /*  styling details of product page */

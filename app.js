@@ -13,7 +13,6 @@ const countAmount = document.querySelector(".count-amount");
 const addToCart = document.querySelector(".add-to-cart");
 const holder = document.querySelector(".holder");
 const imagesContainer = document.querySelector(".images-container");
-// const modalPage = document.querySelector('.modal-page')
 const hoveredImage = "./images/icon-plus.svg";
 const closeModal = document.querySelector(".modal-close");
 

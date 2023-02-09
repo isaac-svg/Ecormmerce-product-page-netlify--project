@@ -1,8 +1,0 @@
-{
-  "images": [
-    { "src": "./images/image-product-1.jpg", "id": "p1" },
-    { "src": "./images/image-product-2.jpg", "id": "p2" },
-    { "src": "./images/image-product-3.jpg", "id": "p3" },
-    { "src": "./images/image-product-4.jpg", "id": "p4" }
-  ]
-}

@@ -12,8 +12,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Built with](#HTML,CSS and Vanilla Js)
   - [What I learned](#i learnt mobile first design )
 
-
-
 ### The challenge
 
 Users should be able to:
@@ -32,10 +30,9 @@ Users should be able to:
 ![](./screenshots/screenshot1.png)
 ![](./screenshots/screenshot3.png)
 
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [](https://ecommui.netlify.app/)
 - Live Site URL: [live URl](https://ecommui.netlify.app/)
 
 ## My process
@@ -47,68 +44,61 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 
-
-
-
 ### What I learned
-i learnt how functions work work; 
-function call before and update in say  a count and function call after a count doesn't give sam results.
+
+i learnt how functions work work;
+function call before and update in say a count and function call after a count doesn't give sam results.
 i learnt how to create hoverlike states with javascript
 the code is show bellow
 closeModal.addEventListener("mouseenter", () => {
-  closeModal.src = hoveredImage;
+closeModal.src = hoveredImage;
 });
 closeModal.addEventListener(
-  "mouseleave",
-  () => (closeModal.src = "./images/icon-close.svg")
+"mouseleave",
+() => (closeModal.src = "./images/icon-close.svg")
 );
 closeModal.addEventListener("click", (e) => {
-  removeModal(e);
-  closeModal.src = "./images/icon-close.svg";
+removeModal(e);
+closeModal.src = "./images/icon-close.svg";
 });
 
 code ends here
 
-
 code snipets:
- // this function clears all active states on the images before swaping and after swapping
+// this function clears all active states on the images before swaping and after swapping
 const clearAllActive = () => {
-  thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+thumbnails.forEach((thumb) => thumb.classList.remove("active"));
 };
-//  this function swaps the immages on small screens
+// this function swaps the immages on small screens
 function swapThumbs() {
-  thumbnails.forEach((thumb, index) => {
-    thumb.addEventListener("click", () => {
-      clearAllActive();
-      //
-      //
-      count = index;
-      changeImage();
-      thumb.classList.add("active");
-    });
-  });
+thumbnails.forEach((thumb, index) => {
+thumb.addEventListener("click", () => {
+clearAllActive();
+//
+//
+count = index;
+changeImage();
+thumb.classList.add("active");
+});
+});
 }
 swapThumbs();
 
-
-
 ### Continued development
+
+1.REFACTOR THE CSS
+2.REFACTOR THE HTML
+3.REFACTOR THE JAVASCRI[T
+]
 
 <!--  -->
 
 ### Useful Resources
 
-MDN Docs 
+MDN Docs
 W3Schools
 
 ## Author
 
 - Website - [Isaac Sakyi](https://ecommui.netlify.app/)
 - Frontend Mentor - [@isaac-svg](https://www.frontendmentor.io/profile/yourusername)
-
-
-
-
-
-
-
